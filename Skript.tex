@@ -1,0 +1,72 @@
+Date:20160412
+\underline{Kommutative Algebra}
+\section{Disclaimer}
+Meine geehrten Leser,
+dieses Skript ist die Mitschrift eines Studenten der Frankfurter Goethe Universitaet, sie ist voller Fehler und ihnen jeden Anspruch auf Korrektheit.
+Der Vorlesende ist Professor Aley Kuronya doch ihm soll hieraus kein Schaden entstehen; wenn Unfug geschrieben steht seien sie versichert, es ist mein Fehler.
+\section{Grundlagen}
+ist das Studium kommutativer Ringe.\\
+Im folgenden sei \( R ein kommutativer Ring m/ 1 \) \\
+Wir studieren "Ringoperationen" also \bold{Moduln \"uber Ringen} \\
+\begin{defn}[Moduln] \label{def_mod}
+Ein \(R\)-Moduln ist eine abelsche Gruppe (additiv) und eine Abbildung 
+\[R \underset{Ringhomomorphismus}{\to} \End_\Zz(M) \]
+\end{defn}
+\begin{hausaufgabe}
+Beweise das \ref{def_mod} zur herk\"ommlichen Definition \"aquivalent ist. \\
+Tipp: betrachte \( G \to \Aut(X) \)
+\end{hausaufgabe}
+\\
+"Lineare Algebra \"uber Ringen" \\
+\begin{bsp}
+Sei \( K \)  ein K\"orper und \( X \) eine Menge / ein topologischer Raum, dann ist \( F_n (X,K ) \) ein kommutativer Ríng.
+\end{bsp}
+\begin{Ziel}
+Wir wollen \underline{jeden Ring} \( R \) als einen Ring von Funktionen auf geometrischen R\"aumen auffassen k\"onnen. \\
+\end{Ziel}
+\section{Zusammenhang zwischen Algebra und Geometrie} 
+\subtitle{Ansatz aus Sicht der algebraischen Geometrie}
+Die Grundobjekte der algebraischen Geometrie werden im folgenden affine Variet\"aten sein. \\
+\begin{defn}[Affine Variet\"aten]
+Sei \( K \) ein beliebiger K\"orper (\zB \Rz ,\Cz,\( \Fz_p(X) \) ) und \( n \in \Nz  \), dann ist der Affine Raum \"uber \( K \) definiert als 
+\[ \Az^n_K = \left\lbrace \left( a_1, \dots , a_n \right) \vert a_i \in K \right\rbrace \] \\
+F\"ur \(n=1 \) sprechen wir von der affinen Geraden und f\"ur \(n=2 \) von der affinen Ebene.
+\end{defn}
+\begin{bem}
+\underset{Raum ohne lineare Struktur}{\(\Az^n_k\) } \underset{Mengen gleich}{\leftrightarrow} \underset{Vektorraum}{\/k^n \) }
+\\
+\begin{konstr} //Konstruktion
+Sei \( f \in k \left[ X_1, \dots, X_n \right] \) , dann ergibt \(f \) eine Funktion 
+\begin{eqnarray}
+\tilde{f} :	& \Az^n_k \to 								& k \\
+			& \left( a_1 , \dots , a_n	\right) \mapsto	& f\left(a_1, \dots, a_n \right)
+\end{eqnarray}
+\end{konstr}
+\begin{bem}
+Falls \( \left\lvert k \right\rvert = \intfy \), dann gilt:
+\[ f= 0 \Leftrightarrow \tilde{f}=0 \]
+\end{bem}
+\begin{bsp}
+\(k = \Fz_p, f \left( x \right)=x^p-x \neq 0 \), aber \(f =0 \).
+\end{bsp}
+\begin{defn}[Affine Variet\"at / algebraische Menge]
+Es sei \( S \subseteq k \left[X_1,\dots,X_n\right] \) , dann ist \( V \left( S \right) = \left\lbrace a \in \Az^n_k \vert \forall f \in S \ f\left( a \right) =0 \right\rbrace \)\\
+Sei \( S = \left\lbrace f_1, \dots ,f_m \right\rbrace \Rightarrow V \left(f_1, \dots, f_m \right) = V \left( S \right) \)
+\end{defn}
+\begin{bsp}
+\begin{itemize}
+\item \( \Rz \left[ x,y \right], f\left(x,y \right)= x^2+y^2-1 \Rightarrow V \left( f \right) = \text{Einheitskreis} \)
+\item Es sei \(f : \Az^n_k \to \Az^1_k \) eine polynomiale Abbildung. Dann gilt \( \Gamma_f= \left\lbrace \left(a,f\left(a \right) \right) \in \^{n+1}_k \vert a \in \Az^n_k \right\rbrace = V \left( x_{n+1} -f \left( x_1, \dots ,x_n \right) \right) \)
+\item \( \emptyset = V (1) \) \\
+	\( \Az^n_k = V (0) \) \\
+	\( \left(a_1, \dots ,a_n \right) = V \left( x_1-a_1, \dots ,x_n-a_n \right) \) \\ // Ein Punkt
+\end{itemize}
+\begin{prop}
+Es seien \( V,W \subseteq \Az^n_k \) algebraische Mengen. Dann sind auch \( V \cap W , V \cup W \) algebraische Mengen. \\
+Pr\"azise gesagt: fuer \( S_1 , S_2 \subseteq k \left( x_1, \dots ,x_n \right) \)
+\begin{itemize}
+\item \( V \left( S_2 \right) \busset V \left( S_1 \right) \Leftrightarrow S_1 \subseteq S_2 \)
+\item  \( V \left(S_1 \right) \cap V \left( S_2 \right) =  V \left(S_1  \cup  S_2 \right) \)
+\item  \( V \left(S_1 \right) \cup V \left( S_2 \right) = V \left(S_1  S_2 \right) \), wobei \( S_1 S_2 : = \left\lbrace fg \vert f \in S_1 , g \in S_2 \right\rbrace \)
+\begin{bem}
+Es seien \left\lbrace S_i \vert i \in I \right\rbrace \subset k\left[x_1,\dots,x_n \right]
