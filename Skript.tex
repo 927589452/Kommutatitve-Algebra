@@ -69,4 +69,63 @@ Pr\"azise gesagt: fuer \( S_1 , S_2 \subseteq k \left( x_1, \dots ,x_n \right) \
 \item  \( V \left(S_1 \right) \cap V \left( S_2 \right) =  V \left(S_1  \cup  S_2 \right) \)
 \item  \( V \left(S_1 \right) \cup V \left( S_2 \right) = V \left(S_1  S_2 \right) \), wobei \( S_1 S_2 : = \left\lbrace fg \vert f \in S_1 , g \in S_2 \right\rbrace \)
 \begin{bem}
-Es seien \left\lbrace S_i \vert i \in I \right\rbrace \subset k\left[x_1,\dots,x_n \right]
+Es seien \left\lbrace S_i \vert i \in I \right\rbrace \subset k\left[x_1,\dots,x_n \right], dann gilt:
+\[ \bigcap_{i \in I } V \left( S_i \right) ) = V \left( \bigcap_{i \in I } S_i \right) \]
+\end{bem}
+\begin{defn}[Zariski Topologie]
+Die Mengen \( \tau := \left\lbrace V \left( S \right) \vert S \subseteq k \left[x_1 , \dots , x_n \right] \right\rbrace \) haben die folgenden Eigenschaften: 
+\begin{itemize}
+\item \( \emptyset , \Az^n_k \in \tau \) 
+\item \( F,G \in \tau \Rightarrow F \cup G \)
+\item \( \left\lbrace F_i \vert i \in I \right\rbrace \Rightarrow \bigcap_{i \in I} F_i \in \tau \) 
+\end{itemize}
+auf diese Weise haben wir eine Topologie auf \( \Az^n_k \) definiert. Sie wird als Zariski Topologie bezeichnet.
+\end{defn}
+\begin{bsp}
+\(  \Az^3_\Rz \busseteq V \left( xy,xz \right) = V \left( x \right) \cup V \left(y,z \right) \)
+//include Graphics for example here 
+\begin{hausaufgabe}
+Bestimmen sie alle algebraische Untermengen von \( \Az^1_k \) // \emptyset \Az^1_l \left\lbrace a \right\rbrace : a \in k 
+\end{hausaufgabe}
+//Hauptidealring = 1-dim geometrische Objekte
+\begin{prop}
+F\"ur \( S \subseteq k \left[ x_1, \dots, x_n \right] gilt
+\[ V \left( S \right) = V \left( \lbrack S \rbrack \right) \]
+wobei \lbrack S \rbrack das Erzeugnis von \(S \) beschreibt 
+\end{prop}
+\begin{defn}[Verschwindungsideal]
+Sei \( T \subseteq \Az^n_k \) beliebig, dann ist das Verschwindungsideal \( I \) definiert als
+\[ I \left( T \right) = \left\lbrace f \in k \left( x_1, \dots , x_ n \vert \forall a \in T f \left(a \right) = 0 \right\rbrace \] 
+\end{defn}
+\begin{aufgabe}
+Zeige \( I ( T) \) ist ein Ideal.
+\end{aufgabe}
+\begin{lem}
+\( T_1 , T_2 \subseteq \Az^n_k \)
+\begin{itemize}
+\item \( T_1 \subseteq T_2 \Rightarrow I (T_2 ) \subseteq I(T_1) \)
+\item \( I \left( T_1 \cup T_2 \right) = I \left( T_1 \right) \cap I \left( T_2 \right) \)
+\end{itemize}
+Dies gilt auch f\"ur beliebige Indexmengen.
+\end{lem}
+\begin{Frage}
+Kann jede algebraische Untermenge von \( \Az^n_k \) von endlich vielen Polynomen beschrieben werden.
+\end{Frage}
+\begin{satz}[Hilbertscher Basissatz]
+Sei  \( R \) ein kommutativer Ring, dann gilt:
+\[ R \text{noethersch} \Rightarrow R\left[ x \right] \text{noethersch} \]
+\end{satz}
+\begin{lem}
+És sei \( R \) ein beliebiger Ring, dann sind \"aquivalent:
+\begin{itemize}
+\label{noet}
+\item Jedes Ideal \( I \subseteq R \) ist endlich erzeugt
+\item Jede aufsteigende Kette von Idealen stabilisiert
+\end{itemize}
+\end{lem}
+\begin{defn}[Noethersch]
+Wenn ein Ring die Eigenschaften aus \ref{noet} erf\"ullt heisst er noethersch
+\end{defn}
+\begin{hausaufgabe}
+Rechnen sie den Beweis durch
+\end{hausaufgabe}
