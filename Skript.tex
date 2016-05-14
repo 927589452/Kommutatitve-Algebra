@@ -1,3 +1,6 @@
+//Abkuerzungen:
+//\providecommand{\idealin}{dreieck nach rechts}
+
 Date:20160412
 \underline{Kommutative Algebra}
 \section{Disclaimer}
@@ -129,3 +132,75 @@ Wenn ein Ring die Eigenschaften aus \ref{noet} erf\"ullt heisst er noethersch
 \begin{hausaufgabe}
 Rechnen sie den Beweis durch
 \end{hausaufgabe}
+
+Date:20160419
+\begin{lem}
+Sei \( R \) ein Ring, dann sind \"aquivalent:
+\begin{itemize}
+\item \( \forall I \idealin R \) ist \( I \) endlich erzeugt
+\item \( R \) hat die ACC (ascending chain condition) Eigenschaft
+\end{itemize}
+\begin{proof}
+\( (ii) \Rightarrow (i) \): Sei \( I \idealin R \) beliebig.
+Man definiere die folgende Kette :
+Sei \( f_i \in I , I_1 = \left( f_1 \right) \) ; 
+\begin{itemize}
+\item Falls \( I_1=I \), dann ist unsere Aussage bereits bewiesen
+\item Falls \( I_1 \neq I \), dann existiert \( f_2 \in I \backslash I_1 \) , dann sei \( I_2:= \left( f_1 ,f_2 \right) \)
+\end{itemize}
+Auf diese Weise erreichen wir nach endlich vielen Schritten \( I = I_n = \left( f_1, \dots , f_n \right) \) oder es gibt eine Kette \( I_1 \subsetneq I_2 \subsetneq \dots \) was ein Widerspruch zur ACC-Eigenschaft ist.
+\end{proof}
+\end{lem}
+\begin{satz}[Hilbertscher Basissatz]
+\( R \text{noethersch} \Rightarrow R \left[ X \right] \text{noethersch} \)
+\begin{proof}
+Wi beweisen durch Widerspruch:
+Sei \( I \idealin R\left[ X \right] \) ein Ideal, das nicht e. e. ?? ist.
+Dann \( \exists \infty-\text{Folge} \) von Elementen \( f_i \in R \left[X \right] \) mit den folgenden Eigenschaften 
+\begin{itemize}
+\item \( f_0 \in I \backslash \left\lbrace 0 \right\rbrace \) und minimalem Grad
+\item \( f_1 \in I \backslash \left( f_0 \right) \) und minimalem Grad
+\item \( f_{i+1} \in I \backslash \left( f_0 , \dots , f_i \right) \) 
+\end{itemize}
+\underline{Merke:}
+\( \forall i \geq 0 \deg f_i \leq \deg f_{i+1} \) \\
+Sei \( a_i \) der Leitkoeffizient von \( f_ i \) , dann gilt \( I_i := \left( a_0, \dots , a_i \right) \idealin R \).
+Aus der Konstruktion folgt:
+\( I_0 \subseteq I_1 \subseteq \dots \) .
+Da \( R \) noethersch ist, wird die Kette \( I_j \) stabilisieren. \\
+\( \Rightarrow \exists m \in \Nz: I_m = I_{m+1} = \dots \) \\
+\( \Rightarrow \forall n \in \Nz: n \geq m a_n \in \left( a_0, \dots, a_n \right) \), das heisst \( \exists r_0 , \dots r_m \in R: a_{m+1} = \sum_i=0^m r_i a_i \)  \\
+Betrachte jetzt \( f:= f_{m+1} - \sum_{i=0}^m x^{\alpha_i} r_i f_i \) , wobei \( \alpha_i := \deg f_{m+1} - \deg f_i \) \\
+\underline{Einerseits :} \( f \in \left( f_0, \dots , f_m \right) \), da \( f_{m+1} \in I \backslash \left( f_0, \dots, f_m \right) \).
+\underline{Andererseits :} \( \deg f \le \deg f_{m+1} \) , da der Koeffizient von \( x^{\deg f_{m+1} \) in \( f =0 \).
+\end{proof}
+\end{satz}
+
+\begin{hausaufgabe}
+Wir haben Leitkoeffizienten von \(f_{m+1} \) zu 0 gemacht.
+\end{hausaufgabe}
+\begin{kor}
+\begin{itemize}
+\item \( k \left[ x_1 , \dots , x_n \right] \) ist noethersch
+\item \( \Zz \left[ x_1 , \dtos ,x_n \right] \) ist noethersch
+\end{itemize}
+\end{kor}
+\begin{frage}
+\label{unnoeth}
+Ist \( k \left[x_1, \dots , x_n, \dots \righŧ] \) noethersch?
+\end{frage}
+\begin{hausaufgabe}
+Zeigen sie das \ref{unnoeth} nicht gilt.
+\end{hausaufgabe}
+\underline{Tipp:}  \( x_{n+1} \notin \left(x_1, \dots , x_n} \)
+\begin{kor}
+Sei  \(V =V \left( S \right) \subset \Az_k^n \Rightarrow \exists S_1 \subseteq S : \left\lvert S_1 \right\rvert \le \infty \) mit \( V \left( S_1 \right) = V \left( S \right) \)
+\end{kor} 
+Wir haben bereits gesehen:
+\[ \left\lbrace Algebraische Mengen \subseteq \Az_k^n \right\rbrace arrow left I () / arrow right V() \left\lbrace Ideale in k \left[x_1 , \dots , x_n \right] \]
+\begin{bem}
+Punkte in \( \Az_k^n \) entsprechen minimalen nicht-leeren algebraischen Mengen. \\
+\( \rightarrow \) Wir erwarten, dass f\"ur einen Punkt \( p \in \Az_k^n \ I (p) \idealin k \left[ x_1, \dots, x_n \right] \) maximal ist.
+ 
+\end{satz}
+
