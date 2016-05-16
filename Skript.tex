@@ -153,6 +153,8 @@ Auf diese Weise erreichen wir nach endlich vielen Schritten \( I = I_n = \left( 
 \end{lem}
 \begin{satz}[Hilbertscher Basissatz]
 \( R \text{noethersch} \Rightarrow R \left[ X \right] \text{noethersch} \)
+
+\end{satz}
 \begin{proof}
 Wi beweisen durch Widerspruch:
 Sei \( I \idealin R\left[ X \right] \) ein Ideal, das nicht e. e. ?? ist.
@@ -197,10 +199,79 @@ Zeigen sie das \ref{unnoeth} nicht gilt.
 Sei  \(V =V \left( S \right) \subset \Az_k^n \Rightarrow \exists S_1 \subseteq S : \left\lvert S_1 \right\rvert \le \infty \) mit \( V \left( S_1 \right) = V \left( S \right) \)
 \end{kor} 
 Wir haben bereits gesehen:
-\[ \left\lbrace Algebraische Mengen \subseteq \Az_k^n \right\rbrace arrow left I () / arrow right V() \left\lbrace Ideale in k \left[x_1 , \dots , x_n \right] \]
+\[ \left\lbrace Algebraische Mengen \subseteq \Az_k^n \right\rbrace arrow left I () / arrow right V() \left\lbrace Ideale in k \left[x_1 , \dots , x_n \right] \right\rbrace \]
 \begin{bem}
 Punkte in \( \Az_k^n \) entsprechen minimalen nicht-leeren algebraischen Mengen. \\
 \( \rightarrow \) Wir erwarten, dass f\"ur einen Punkt \( p \in \Az_k^n \ I (p) \idealin k \left[ x_1, \dots, x_n \right] \) maximal ist.
  
+\( I \left( x_1-p_1, \dots , x_n-p_n \right) \)
+\(k \left[x_1, \dots ,x_n \right] / I \left(p \right) \)
+\begin{eqnarray}
+k \left[x_1, \dots , x_n \right] & \overset{\ev}{\to} & ?? \\
+x_i & \mapsto & p_i 
+\end{eqnarray}
+\[ \ker \ev = I \left( p \right) \] 
+ Homomorphiesatz \( \Rightarrow  k \left[x_1, \dots,x_n \right] / \ker \ev = ?? \) 
+ \begin{satz}[Hilbertscher Nullstellensatz]
+ Es sei \( K \) ein algebraisch abgeschlossener K\"orper , dann existiert eine bijektive Abbildung:
+ \[ \left\lbrace maximale Ideale in k \left[x_1, \dots, x_n \right] \subseteq \Az_k^n \right\rbrace arrow left I () / arrow right V() \left\lbrace p \in \Az_k^n \right\rbrace \]
 \end{satz}
+\begin{kor}
+Falls \( k \) algebraisch abgeschlossen ist \( Rightarrow  \forall I \idealinneq k \left[ x_1, \dots,x_n \right] V \left( I \right) \neq \emptyset \).
+\end{kor}
+\begin{proof}
+\( \forall I \idealin R \exists M \idealin R \text{maximal} : I \subseteq M \)
+\( \Rightarrow V \left( I \right) \busseteq V \left( M \right) \underset{HNS}{\busseteq} \left\lbrace \text{Punkt} \right\rbrace \neq \emptyset \)
+\end{proof}
+\begin{bsp}
+Sei \( I \idealin k \left[ X \right] , I \neq \left( 0 \right) , I \neq \left(1 \right) \), da \( k \left[x \right] : I = \left( f \right) \) und \(f\) nicht konstant, normiert.\\
+\( k = \bar{k} \Rightarrow f= \prod_{i=1}^n \left( x-a_i \right)^{m_i} ,a_i \neq a_j \text{f\"ur} i \neq j \),m_i \ge 0 \)
+\( \Rightarrow V \left( f \right) = \left\lbrace a_1, \dots ,a_d \right\rbrace \)
+\(I \left( V \left( I \right) \right) = I \left( a_1, \dots, a_d \right)  = \left( \left( x-a_1 \right) \dots \left(x-a_n \right) \right) \)
+\begin{defn}
+Sei \( I \idealin R \) . Das \underline{Radikal von \( I \) } \( \sqrt{I }:= \left\lbrace a \in R \vert \exists m \in \Nz: a^m \in I \right\rbrace \)
+\( I \) heisst \underline{Radikalideal} , falls \( \sqrt{I } = I \).
+\end{defn}
+\begin{bsp}
+\( \left( 27 \right) \idealin \Zz \) \\
+\( \left( 27 \right) = \left\lbrace 3^3 r \vert r \in \Zz \right\rbrace \) \\
 
+\( \left( 3 \right)\subseteq \sqrt{ \left( 27 \right) }   \) \\
+\( a=p_1^{\alpha_1} \dots p_n^{\alpha_n} =3^3*r\) \\
+\begin{aufgabe}
+\( \sqrt{ \left( 24 \right) } = ? \)
+\( \left( 24 \right) = \left\lbrace 2^3 *3 *r \vert r \in \Zz \right\rbrace \) \\
+\( \sqrt{ \left( 24 \right) } = \left( 6 \right) \) \\
+\end{æufgabe}
+\begin{hausaufgabe}
+Zeigen sie, dass \( \sqrt{ \left( p_1^{\alpha_1} \dots p_n^{\alpha_n} \right) } = \left( p_1 \dots p_n \right) \) .
+\end{aufgabe}
+\begin{prop}
+\begin{itemize}
+\item \( X \subseteq \Az_k^n \) algebraische Menge \( \Rightarrow V \left( I \left( X \right) \right) = X \) 
+\item \label{inklusion}\(J \idealin k \left[x_1, \dots, x_n \right], k = \bar{k} \Rightarrow I \left( V \left( J \right) \right) = \sqrt{J} \)
+\end{itemize}
+\end{prop}
+\begin{hausaufgabe}
+Zeigen sie das  ohne \( k = \bar{k} \) in \ref{inklusion} nur eine Richtung gilt.
+\end{hausaufgabe}
+\begin{proof}
+\begin{itemize}
+\item \( X \) algebraische Menge, \dh \( X = v \left( J \right) \) f\"ur ein Ideal \( J \idealin k \left[ x_1, \dots, x_n \right] \)\\
+\( \Rightarrow V \left( J \right) \busseteq V \left( I \left( V \left( J \right) \right) \right) ) V \left( I \left( X \right) \right) \)
+\item \( I \left( V \left( J \right) \right) \busseteq \sqrt{J } \) ist die einfache Richtung \label{hinrichtung}
+\end{itemize}
+\begin{hausaufgabe}
+Zeigen sie \ref{hinrichtung}
+\end{hausaufgabe}
+\( \underline{ \subseteq } \) Sei \( f \in I \left( V \left( J \right) \right) \).
+Betrachte \( \tilde{J}:=J+\left( f t -1 \right) \idealin k\left[x_1,\dots, x_n,t \right]  \) 
+\underline{Merke: } \( V \left( \tilde{J } \right) \subseteq \Az_k^{n+1} \neq \emptyset \) \\
+\begin{hausaufgabe}
+Zeigen sie: \( V \left( \tilde{J } \right)= \emptyset \)
+\end{hausaufgabe}
+Aus dem HNSS folgt: \( \tilde{J} = \left(1 \right) \)\\
+\( \Rightarrow 1=\left(ft-1\right)g_0+\sum_{i=1}^r f_i g_i \) f\"ur geeignete \( g_i \in k \left[ x_1,\dots , \x_n,t\right] , f_i \in J \) \\
+Sei \( t^N \) die h\"ochste Potenz von \(t\), die in den \( g_i \) vorkommt
+\( \Rightarrow f^N = \left( ft -1 \right) G_0\left( x_0, \dots,x_n,ft\right) + \sum f_i G_i\left(x_1, \dots,x_n,ft \right) \), wobei \( G_i = f^N g_i \).
+\end{proof}
