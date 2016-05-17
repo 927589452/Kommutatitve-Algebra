@@ -1,5 +1,7 @@
 //Abkuerzungen:
 //\providecommand{\idealin}{dreieck nach rechts}
+//\providecommand{\bzgl}{bez\"uglich}
+//\providecommand{\prim}{\text{prim}}
 
 Date:20160412
 \underline{Kommutative Algebra}
@@ -275,3 +277,47 @@ Aus dem HNSS folgt: \( \tilde{J} = \left(1 \right) \)\\
 Sei \( t^N \) die h\"ochste Potenz von \(t\), die in den \( g_i \) vorkommt
 \( \Rightarrow f^N = \left( ft -1 \right) G_0\left( x_0, \dots,x_n,ft\right) + \sum f_i G_i\left(x_1, \dots,x_n,ft \right) \), wobei \( G_i = f^N g_i \).
 \end{proof}
+
+Date:20160426
+\underline{Aussage:} Falls \( k= \bar{k} \) , dann gilt: 
+\[ I \left( V \left( J \right) \right) = \sqrt{J} \]
+\begin{proof}
+\( \subseteq \) \\
+\zZ: \(I \left( V \left( J \right) \right) = \sqrt{J} \) \\
+\underline{Idee:} \( \in k \left[ x_1, \dots,x_n \right] \) arbeiten \\
+ Es sei \( f \in  I \left( V \left( J \right) \right)  \) , betrachte \( \tilde{J} = J + left( f t -1 \right)  \subseteq k  \left[ x_1, \dots,x_n , t \right] \)
+ \\
+ \underline{Merke: } \( v \left( \tilde{J} \right) = \emptyset \overset{HNSS}{\Rightarrow } \tilde{J} = \left( 1 \right) \), insbesondere \( 1 = \left( ft -1 \right) g_0  + \sum_{i=1}^n f_i g_i \), wobei \( g_i \in k \left[ x_1, \dots, x_n \right] , f \in J \) . \\
+ Sei jetzt \( t^N \) die h\"ochste Potenz von \(t \), die in  \( g_0, \dots ,g_n \) auftritt. \\
+ \( \Rightarrow t^N= \left( ft -1 \right) \underset{G_0}{\left( g \circ f \right) } + \sum_{i=1}^{m?} \underset{g_i }{f_i \left( g f^N \right)  } \) \\ 
+ \( f^N= \left( ft -1 \right) G_o + \sum_{i=1}^m f_i G_i \) , wobei \( G_i \) ein Polynom von \( x_1, \dots , x_n,ft \) ist \\
+ Mod \( \left( ft -1 \right \) : \\
+ \( f^N = \sum_{i=1}^m f_i G_i \left( x_1, \dots,x_n,1 \right) \in k \left[x_1, \dots,x_n, t \right] / \left( ft -1 \right) \) \\
+ Da die Abbildung \( k \left[ x_1, ,\dots,x_n \right] \hookrightarrow k \left[ x_1, \dots, x_n,t \right] \rrightarrow k \left[x_1, \dots,x_n ,t \right] / \left( ft -1 \right) \) injektiv ist, gilt \( \left( * \right) \) auch in \( k \left[ x_1 , \dots , x_n \right] \). \qedhere \\
+ \end{proof} 
+ \begin{bem}[Zariski-Topologie]
+ Algebraische Mengen induzieren eine Topologie auf \( \Az_k^n \) 
+ \( \leftarrow \forall T \subseteq \Az_k^n \) eine Topologie induziert wird. \\
+ \( F \subseteq T \) ist algebraisch \( \Leftrightarrow \exists! G \subseteq \Az_k^n \) algebraisch.\\
+ \( F= T \Cap G \) Unterraumtopologie auf \( T \) 
+ \end{bem}
+ \begin{hausaufgabe}
+ Die Unterraumtopologie ist die kleinste Topologie \( \left( \min # \text{offene Mengen} \right) \) auf  \( T \) , f\"ur die \( T \righthookarrow  \Az_k^n \) stetig ist 
+ \end{hausaufgabe}
+ \begin{hausaufgabe}
+ Es sei \( f : \Az_k^1 \to \Az_k^1 \) eine Bijektion \\
+\( \Rightarrow f \) ist Homoeomorphismus \bzgl Zariskitopologie \( T_{Z?} \)
+\end{hausaufgabe}
+\begin{hausaufgabe}
+Beweise: Polynomiale Abbildungen sind Zariski-stetig 
+\end{hausaufgabe}
+\underline{Erinnerung:} 
+\[ \text{algebraische Mengen in } \Az_k^n \overset{V}{\underset{I}{\leftrightarrow }} \text{Ideale in } k \left[ x_1, \dots,x_n \right] \] \\
+\begin{defn}[Spec R ]
+Spec R = \left\lbrace P \in R \vert P \prim \right\rbrace
+\end{defn}  
+\begin{bem} 
+Sei \( \phi : R \to S \) Ringhomomorphismus,\( P \idealin S \) 
+
+
+\end{bem}
