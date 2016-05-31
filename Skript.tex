@@ -2,6 +2,7 @@
 //\providecommand{\idealin}{dreieck nach rechts}
 //\providecommand{\bzgl}{bez\"uglich}
 //\providecommand{\prim}{\text{prim}}
+//\providecommand{\injto}{\to mit haken}
 
 Date:20160412
 \underline{Kommutative Algebra}
@@ -317,7 +318,61 @@ Beweise: Polynomiale Abbildungen sind Zariski-stetig
 Spec R = \left\lbrace P \in R \vert P \prim \right\rbrace
 \end{defn}  
 \begin{bem} 
-Sei \( \phi : R \to S \) Ringhomomorphismus,\( P \idealin S \) 
+Sei \( \phi : R \to S \) Ringhomomorphismus,\( P \idealin S \) , dann sollte gelten:
+\begin{eqnarray}
+	\Phi^{*} : & \Spec S \to & S \\
+			& \triangleup & \\
+			& P \mapsto & \Phi^{*} \left( P \right) 
+\end{eqnarray}
+
+Vorsicht: \( \mf \idealin S \) maximal \( \not\Rightarrow \Phi^{-1} \subseteq R \) maximal . \\
+\end{bem }
+
+\begin{bsp}
+ \begin{eqnarray}
+ 	\Zz & \injto & \Qz \\
+ 	\left( 0 \right) & & \left( 0 \right)
+\end{eqnarray}
+
+\begin{lem}
+	\( \Phi: R \to S \) Ringhomomorphismus \\
+	\( \Rightarrow \Phi^{-1} \left( P \right) \idealin R \prim \) 
+\end{lem}
 
 
+\begin{defn}[Primideal]
+Ein Ideal \( P \idealin R \) heisst \prim , wenn gilt: \\
+\( ab \in P \Rightarrow a \in P \text{oder} b \in P \) 
+
+\end{defn}
+
+\begin{proof} 
+Das Urbild von einem Ideal ist ein Ideal \\
+\underline{zu zeigen: } ( Primeigenschaft ) 
+Seien \( a,b } \in R : ab \in \Phi^{-1} \left( P \right) \) \\
+\( \Leftrightarrow  P \ni \Phi \left( ab \right) = \Phi \left(a \right) \Phi \left( b \right)  \) \\ 
+Da \( P \) \prim ist folgt, \( \Phi \left( a \right) \in P \) oder \(\Phi \left( b \right) \in P \) \\
+\( \Rightarrow a \in \Phi^{-1} \left( P \right) \) oder \( b \in \Phi^{-1} \left( P \right)  \) \\
+\end{proof}
+
+\begin{bem}[Topologie]
+Wenn wir als abgeschlossene Mengen die \( V \left( I \right) := \left\lbrace P \in \Spec R \vert I \subseteq P \right\rbrace \) , 
+so erhalten wir hiermit die Zariski-Topologie auf \( \Spec R \) .
 \end{bem}
+
+\begin{bsp}
+Sei \( R = \Zz \),
+dann ist /( \Spec R = \left\lbrace P \idealin \Zz \vert P \prim \right\rbrace  \) 
+\( = \left\lbrace \left( p \right) \vert p \prim \right\rbrace \cup \left\lbrace 0 \right\rbrace \) \\
+\( \left\lbrace \left( p \right) \right\rbrace = \V \left( p \right) \) abgeschlossen.
+\\
+\( \underline{\left\lbrace \left( 0 \right) \right\rbrace \) }
+
+\( \left\lbrace \left( 0 \right) \right\rbrace \) ist nicht abgeschlossen . \\
+\( \left\lbrace \left( 0 \right) \right\rbrace \overset{?}[=} V \left( I \right) = \left\lbrace P \in Spec \Zz \vert P \busseteq I \right\rbrace   \) \\
+Falls \( \left( 0 \right) \in V \left) I \right) \)
+\( \Leftrightarrow \left( 0 \right) \busseteq I \Rightarrow  \forall V \left( I \right) \ni \mf \) maximimal in \( \Zz \)   
+
+??
+\end{bsp}
+
